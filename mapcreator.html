@@ -1,0 +1,43 @@
+<style> * { margin: 0; } </style>
+<canvas id="canvas"></canvas>
+<script>
+
+var w, h, c, ctx;
+
+window.onload = function() {
+  c = document.getElementById('canvas');
+  ctx = c.getContext('2d');
+  c.width = w = innerWidth;
+  c.height = h = innerHeight;
+
+  c.addEventListener("mousemove", mousemove);
+  c.addEventListener("mousedown", mousedown);
+  c.addEventListener("mouseup", mouseup);
+  document.addEventListener("keydown", keydown);
+  document.addEventListener("keyup", keyup);
+}
+
+var gameObjects = [];
+
+var render = function() {
+  ctx.clearRect(0, 0, w, h);
+  for(var i=0; i<gameObjects.length; i++) {
+    ctx.arc(gameObjects[i].x, gameObjects[i].y, gameObjects[i].r, 0, 2*Math.PI);
+    ctx.fillStyle = gameObjects[i].type == 0 ? "yellow" : "brown";
+    ctx.fill();
+  }
+}
+
+var dumpObjects = function() { console.log(JSON.stringify(gameObjects)); };
+var loadObjects = function(objdump) { gameObjects = JSON.parse(objdump); };
+
+var mousemove = function(e) {};
+var mouseup = function(e) {};
+var mousedown = function(e) {};
+var keyup = function(e) {};
+var keydown = function(e) {};
+</script>
+
+<div id="edit0">
+  <button onclick=""></button>
+</div>

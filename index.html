@@ -1,0 +1,40 @@
+<style>
+* { margin: 0 }
+#menu {
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+
+  top: 50%;
+  left: 50%;
+}
+#upgrade {
+  display: none;
+}
+.pos {
+  position: absolute;
+}
+</style>
+<script src="main.js" charset="utf-8"></script>
+<script src="player.js" charset="utf-8"></script>
+<script src="obstacle.js" charset="utf-8"></script>
+<script src="coin.js" charset="utf-8"></script>
+<script src="utils.js" charset="utf-8"></script>
+
+<div id="menu" class="pos">
+  <button type="button" name="playbtn" onclick="startGame()">PLAY</button>
+</div>
+<div id="upgrade" class="pos">
+  <div class="upg">
+    <span>Coin Luck</span>
+    <span id="coinlucklvl">0</span>
+    <button type="button" name="coinluck" onclick="upgrade('coinluck')">+</button>
+    <button type="button" name="toggleNewRender" onclick="toggleNewRender()">NEW RENDER</button>
+  </div>
+  <div class="upg">
+    <span>Auto Coin</span>
+    <span id="autocoinlvl">0</span>
+    <button type="button" name="autocoin" onclick="upgrade('autocoin')">+</button>
+  </div>
+</div>
